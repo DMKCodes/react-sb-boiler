@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <header className="site-header">
             <div className="container header-inner">
-                <Link className="logo" to="/">O.M.C.</Link>
+                <Link className="logo" to="/">REACT-SB-BOILER</Link>
 
                 <nav aria-label="Primary">
                     <ul className="nav">

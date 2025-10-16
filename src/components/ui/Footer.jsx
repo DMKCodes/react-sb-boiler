@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="site-footer">
             <div className="container footer-inner">
-                <p>© {year} Powerhouse Percussion</p>
+                <p>© {year} HOTKEY CREATIVE</p>
                 <nav aria-label="Footer">
                     <ul className="footer-nav">
                         <li><Link to="/faq">FAQ</Link></li>
