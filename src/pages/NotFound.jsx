@@ -1,11 +1,15 @@
-import { Helmet } from "@dr.pogodin/react-helmet";
+import { Helmet } from "@dr.pogodin/react-helmet"; 
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
-    <div className="container u-stack">
-        <Helmet><title>404 Page Not Found — REACT-SB-BOILER</title></Helmet>
-        <h1>Error 404: Page Not Found</h1>
-        <p>Page not found. Return home?</p>
-    </div>
+    return (
+        <div className="container u-stack">
+            <Helmet><title>Page Not Found</title></Helmet>
+            <h1>404</h1>
+            <p>We couldn't find that page.</p>
+            <Link to="/" className="c-button">Return Home</Link>
+        </div>
+    );
 };
 
 export default NotFound;
