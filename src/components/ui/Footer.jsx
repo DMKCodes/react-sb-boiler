@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -6,7 +5,6 @@ const Footer = () => {
     return (
         <footer className="site-footer">
             <div className="container footer-inner">
-                <p>© {year} HOTKEY CREATIVE</p>
                 <nav aria-label="Footer">
                     <ul className="footer-nav">
                         <li><Link to="/faq">FAQ</Link></li>
@@ -14,6 +12,7 @@ const Footer = () => {
                         <li><a href="mailto:hello@example.com">Email</a></li>
                     </ul>
                 </nav>
+                <p>© {year} HOTKEY CREATIVE</p>
             </div>
         </footer>
     );

@@ -1,6 +1,6 @@
 Build checklist
 
- Repo from template; envs; analytics
+ Create new repo from template
  IA/routes; nav; footer
  Core components (Button/Card/Section)
  ContactForm wired to provider
