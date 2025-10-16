@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@use "variables" as *;
+@use "mixins" as *;
+
+// 3.1 Reset / base (trimmed)
+:root {
+  /* Typography */
+  --font-heading: #{$font-heading};
+  --font-body:    #{$font-body};
+  --size-body:    #{$size-body};
+  --line-body:    #{$line-body};
+
+  /* Color (semantic) */
+  --color-bg:        #{$color-bg};
+  --color-surface:   #{$color-surface};
+  --color-text:      #{$color-text};
+  --color-primary:   #{$color-primary};
+  --color-accent:    #{$color-accent};
+  --color-highlight: #{$color-highlight};
+
+  /* Radii */
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+
+  /* Spacing scale */
+  @each $k, $val in $space-scale {
+    --space-#{$k}: #{$val};
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-family: v(--font-body, $font-body);
+  font-size:   v(--size-body, $size-body);
+  line-height: v(--line-body, $line-body);
+  color:       v(--color-text, $color-text);
+  background:  v(--color-bg, $color-bg);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:       #0b1220;
+    --color-surface:  #111a2e;
+    --color-text:     #e6eaf3;
+    --color-primary:  #ff6b72;
+    --color-accent:   #4fd8eb;
+    --color-highlight:#ffd166;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg:       #0b1220;
+  --color-surface:  #111a2e;
+  --color-text:     #e6eaf3;
+  --color-primary:  #ff6b72;
+  --color-accent:   #4fd8eb;
+  --color-highlight:#ffd166;
+}
+
+:root[data-theme="high-contrast"] {
+  --color-bg:       #000;
+  --color-surface:  #000;
+  --color-text:     #fff;
+  --color-primary:  #fff;
+  --color-accent:   #fff;
+  --color-highlight:#ff0;
+}
+
+:root[data-brand="rhythm-kids"] {
+  --color-primary:  #E63946;
+  --color-accent:   #06B6D4;
+  --color-highlight:#F59E0B;
+}
+
+:root[data-brand="forest-folk"] {
+  --color-primary:  #2ecc71;
+  --color-accent:   #27ae60;
+  --color-highlight:#f1c40f;
+}
+
+:root { --focus-ring: 3px; --focus-color: #3b82f6; }
+:focus-visible { outline: var(--focus-ring) solid var(--focus-color); outline-offset: 2px; }
+
+.u-stack > * + * { margin-top: var(--space-4, 1rem); }

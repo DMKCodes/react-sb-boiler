@@ -1,0 +1,25 @@
+// Primitives
+$space-scale: (0: 0, 1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.5rem, 6: 2rem);
+$radius-md: 12px;
+$radius-lg: 16px;
+
+
+// Brand-Specific Primitives
+$brand-primary: #E63946; // 
+$brand-accent:  #06B6D4; // 
+$brand-hi:      #F59E0B; // 
+$ink:           #0F172A; // near-black
+$paper:         #F8FAFC; // near-white
+
+// Semantic
+$color-bg:        $paper;
+$color-surface:   #FFFFFF;
+$color-text:      $ink;
+$color-primary:   $brand-primary;
+$color-accent:    $brand-accent;
+$color-highlight: $brand-hi;
+
+$font-heading: "Paytone One", system-ui, sans-serif;
+$font-body:    "Inter", system-ui, sans-serif;
+$line-body:    1.6;
+$size-body:    18px;
