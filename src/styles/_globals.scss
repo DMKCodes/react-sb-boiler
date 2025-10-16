@@ -80,3 +80,15 @@ html {
 :focus-visible { outline: var(--focus-ring) solid var(--focus-color); outline-offset: 2px; }
 
 .u-stack > * + * { margin-top: var(--space-4, 1rem); }
+
+// Skip to content link styling for keyboard users.
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary, #E63946);
+  color: var(--color-surface, #fff);
+  padding: .5rem .75rem;
+  border-radius: .375rem;
+}
+.skip-link:focus { left: .5rem; top: .5rem; z-index: 1000; }

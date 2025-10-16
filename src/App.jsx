@@ -4,7 +4,7 @@ import Layout from "./components/common/Layout.jsx";
 import ScrollToTop from "./components/common/ScrollToTop.jsx";
 import routes from "./routes/routes.jsx";
 
-export default function App() {
+const App = () => {
   return (
     <>
       <ScrollToTop />
@@ -26,3 +26,5 @@ export default function App() {
     </>
   );
 };
+
+export default App;
