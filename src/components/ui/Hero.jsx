@@ -13,6 +13,8 @@ const Hero = ({
     videoSrc,
     align="left",
     children,
+    as: As = "div",
+    contained = true
 }) => {
     const reduced = usePrefersReducedMotion();
 
@@ -52,7 +54,7 @@ const Hero = ({
     };
 
     return (
-        <section className={`hero hero--${align}`}>
+        <As className={`hero hero--${align} ${contained ? "hero--contained" : ""}`}>
             <div className="hero__grid">
                 <motion.div
                     className="hero__content"
@@ -133,7 +135,7 @@ const Hero = ({
                     </motion.div>
                 )}
             </div>
-        </section>
+        </As>
     );
 };
 

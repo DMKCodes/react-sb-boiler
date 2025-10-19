@@ -1,4 +1,7 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
+import Section from "../components/common/Section";
+import Container from "../components/common/Container";
+import Hero from "../components/ui/Hero";
 
 const Home = () => {
     return (
@@ -9,14 +12,20 @@ const Home = () => {
                 <link rel="canonical" href="/" />
             </Helmet>
 
-            <section className="hero">
-                <h1>React SB Boilerplate</h1>
-                <p>A boilerplate utility for rapidly spinning up front-end-only projects with a small business focus.</p>
-                <div className="actions">
-                    <a className="c-button" href="/contact">Let's talk</a>
-                    <a className="c-button c-button--ghost" href="/media">See a preview</a>
-                </div>
-            </section>
+            <Section padding="xl" alt>
+                <Container size="lg">
+                    <Hero
+                        as="div"
+                        contained={false}
+                        align="left"
+                        title="Spin up small business projects with ease."
+                        sub="A robust, plug-and-play template for building small business applications with React."
+                        primary={{ label: "Learn more", href: "/contact" }}
+                        posterSrc=""
+                        videoSrc=""
+                    />
+                </Container>
+            </Section>
         </div>
     );
 };

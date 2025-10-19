@@ -1,19 +1,22 @@
 @use "../_variables" as *;
 @use "../_mixins" as *;
 
-.hero {
-  padding-block: map-get($space, 8); /* 4rem by default */
+.hero--contained {
+  padding-block: map-get($space, 8);
   background: var(--color-bg, #F8FAFC);
   color: var(--color-text, #0F172A);
+}
+
+.hero--contained .hero__grid {
+  max-width: $container-lg;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .hero__grid {
   display: grid;
   gap: map-get($space, 6);
   align-items: center;
-  max-width: $container-lg;
-  margin-inline: auto;
-  padding-inline: 1rem;
 
   @include respond-to(md) {
     grid-template-columns: 1.1fr 1fr;

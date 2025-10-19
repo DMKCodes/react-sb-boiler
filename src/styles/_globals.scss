@@ -37,6 +37,15 @@ html {
   line-height: v(--line-body, $line-body);
   color:       v(--color-text, $color-text);
   background:  v(--color-bg, $color-bg);
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
