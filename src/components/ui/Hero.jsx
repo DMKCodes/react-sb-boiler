@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
+import Video from '../common/Video';
 import "../../styles/components/_hero.scss";
 
 const Hero = ({
-    eyebrow,
-    title,
-    sub,
-    primary,
-    secondary,
-    posterSrc,
-    videoSrc,
+    eyebrow, title, sub,
+    primary, secondary,
+    posterSrc, videoSrc, captions = [],
     align="left",
     children,
     as: As = "div",
@@ -104,26 +101,14 @@ const Hero = ({
                                     <Dialog.Overlay className="hero-modal__overlay" />
                                     <Dialog.Content className="hero-modal__content" aria-label="Video">
                                         <Dialog.Close className="hero-modal__close" aria-label="Close">✕</Dialog.Close>
-
-                                        {/* Sort of lazy heuristic, renders iframe if src is YouTube, else renders <video> element */}
-                                        {/(youtube\.com|youtu\.be)/i.test(videoSrc) ? (
-                                            <div className="hero-modal__frame">
-                                                <iframe
-                                                title="Hero video"
-                                                src={toYoutubeEmbed(videoSrc)}
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowFullScreen
-                                                />
-                                            </div>
-                                        ) : (
-                                            <video
-                                                className="hero-modal__video"
-                                                src={videoSrc}
-                                                controls
-                                                playsInline
-                                                preload="metadata"
-                                            />
-                                        )}
+                                        <Video
+                                            src={videoSrc}
+                                            poster={posterSrc}
+                                            captions={captions}
+                                            controls
+                                            autoPlay={false}
+                                            className="hero-modal__video"
+                                        />
                                     </Dialog.Content>
                                 </Dialog.Portal>
                             </Dialog.Root>
@@ -138,18 +123,5 @@ const Hero = ({
         </As>
     );
 };
-
-// Helper function converts YouTube URLs to embeds
-const toYoutubeEmbed = (url) => {
-    try {
-        const u = new URL(url);
-        if (u.hostname.includes("youtu.be")) return `https://www.youtube.com/embed/${u.pathname.slice(1)}?rel=0`
-        if (u.hostname.includes("youtube.com")) {
-            const id = u.searchParams.get("v");
-            return `https://www.youtube.com/embed/${id}?rel=0`;
-        }
-    } catch {}
-    return url;
-}
 
 export default Hero;
