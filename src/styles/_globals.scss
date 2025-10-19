@@ -26,7 +26,7 @@
   --radius-lg: #{$radius-lg};
 
   /* Spacing scale */
-  @each $k, $val in $space-scale {
+  @each $k, $val in $space {
     --space-#{$k}: #{$val};
   }
 }
