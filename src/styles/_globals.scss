@@ -1,8 +1,11 @@
 @use "variables" as *;
 @use "mixins" as *;
 @use "./components/button" as *;
+@use "./components/card" as *;
+@use "./components/container" as *;
+@use "./components/header" as *;
+@use "./components/section" as *;
 
-// 3.1 Reset / base (trimmed)
 :root {
   /* Typography */
   --font-heading: #{$font-heading};
@@ -78,7 +81,7 @@ html {
 }
 
 :root { --focus-ring: 3px; --focus-color: #3b82f6; };
-:focus-visible { outline: var(--focus-ring) solid var(--focus-color); outline-offset: 2px; };
+:focus-visible { outline: var(--focus-ring) solid var(--focus-color); outline-offset: 3px; };
 
 .u-stack > * + * { margin-top: var(--space-4, 1rem); };
 
@@ -94,35 +97,3 @@ html {
 };
 .skip-to-content-link:focus { left: .5rem; top: .5rem; z-index: 1000; };
 
-// Site header (placeholder)
-.site-header { 
-  background: var(--color-surface, #fff); 
-  border-bottom: 1px solid rgba(0,0,0,.06); 
-};
-.header-inner { 
-  display:flex; 
-  align-items:center; 
-  justify-content:space-between; 
-  padding: 1rem 0; 
-};
-.nav { 
-  display:flex; 
-  gap: 1rem; 
-  list-style:none; 
-  margin:0; 
-  padding:0; 
-};
-.nav-link { 
-  padding:.5rem .75rem; 
-  border-radius: .5rem; 
-  text-decoration:none; 
-  color: var(--color-text,#0F172A); 
-};
-.nav-link.active { 
-  background: rgba(0,0,0,.06); 
-};
-.logo { 
-  font-weight: 800; 
-  text-decoration:none; 
-  color: var(--color-text,#0F172A); 
-};

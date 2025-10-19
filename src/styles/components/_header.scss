@@ -1,0 +1,39 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.site-header { 
+  background: var(--color-surface, #fff); 
+  border-bottom: 1px solid rgba(0,0,0,.06); 
+};
+
+.header-inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 1rem 0; 
+};
+
+.nav { 
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+};
+
+.nav-link { 
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  color: var(--color-text,#0F172A);
+};
+
+.nav-link.active { 
+  background: rgba(0,0,0,.06);
+};
+
+.logo { 
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--color-text,#0F172A)
+};

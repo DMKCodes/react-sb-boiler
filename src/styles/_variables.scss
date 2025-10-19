@@ -1,10 +1,21 @@
-// Primitives
-$space-scale: (0: 0, 1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.5rem, 6: 2rem);
+// Spacing
+$space: (0: 0, 1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.5rem, 6: 2rem, 7: 3rem, 8: 4rem);
+
+// Breakpoints
+$bp: (sm: 40rem, md: 56rem, lg: 72rem, xl: 88rem);
+
+// Container widths
+$container-sm: 44rem; // ~704px
+$container-md: 60rem; // ~960px
+$container-lg: 72rem; // ~1152px
+$container-xl: 88rem; // ~1408px
+
+// Radius & shadow
 $radius-md: 12px;
 $radius-lg: 16px;
+$shadow-card: 0 8px 28px rgba(15,23,42,.12);
 
-
-// Brand-Specific Primitives
+// Brand-specific primitives
 $brand-primary: #E63946; // 
 $brand-accent:  #06B6D4; // 
 $brand-hi:      #F59E0B; // 
