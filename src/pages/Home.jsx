@@ -1,15 +1,21 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { buildSeo, renderHelmetTags } from "../lib/seo";
+import { ld, makeOrganization } from "../lib/schema";
 import Section from "../components/common/Section";
 import Hero from "../components/ui/Hero";
 
 const Home = () => {
+    const seo = buildSeo({
+        title: "PROJECT TITLE",
+        description: "Project description, typically 30-60 chars.",
+        path: "/",
+        image: "/assets/example.jpg",
+    });
+
     return (
         <div className="container u-stack">
-            <Helmet>
-                <title>Home — REACT-SB-BOILER</title>
-                <meta name="description" content="React boilerplate for small business projects." />
-                <link rel="canonical" href="/" />
-            </Helmet>
+            {renderHelmetTags(Helmet, seo)}
+            <script type="application/ld+json">{ld(makeOrganization())}</script>
 
             <Section padding="xl" alt>
                 <Hero

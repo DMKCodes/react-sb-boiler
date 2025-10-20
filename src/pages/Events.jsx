@@ -1,10 +1,21 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { buildSeo, renderHelmetTags } from "../lib/seo";
+import { ld, makeOrganization } from "../lib/schema";
 import Section from "../components/common/Section";
 
 const Events = () => {
+    const seo = buildSeo({
+        title: "PROJECT TITLE",
+        description: "Project description, typically 30-60 chars.",
+        path: "/",
+        image: "/assets/example.jpg",
+    });
+
     return (
         <div className="container u-stack">
-            <Helmet><title>Events — REACT-SB-BOILER</title></Helmet>
+            {renderHelmetTags(Helmet, seo)}
+            <script type="application/ld+json">{ld(makeOrganization())}</script>
+            
             <Section size="lg" padding="xl" alt>
                 <h1>Events Calendar</h1>
                 <p>See our upcoming events.</p>
