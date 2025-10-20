@@ -1,8 +1,29 @@
+import React from "react";
 import { motion } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import Video from '../common/Video';
 import "../../styles/components/_hero.scss";
+
+const Action = ({ cfg, variant="primary" }) => {
+    if (!cfg) return null;
+    const className = variant === "primary" ? "c-button" : "c-button c-button--ghost";
+
+    if (cfg.href) {
+        const isInternal = cfg.href.startsWith("/");
+        return isInternal ? (
+            <a className={className} href={cfg.href}>{cfg.label}</a>
+        ) : (
+            <a className={className} href={cfg.href} target="_blank" rel="noreferrer">{cfg.label}</a>
+        )
+    }
+    
+    return (
+        <button className={className} type="button" onClick={cfg.onClick}>
+            {cfg.label}
+        </button>
+    );
+};
 
 const Hero = ({
     eyebrow, title, sub,
@@ -31,24 +52,6 @@ const Hero = ({
 
     const animationContainer = reduced ? {} : container;
     const animationItem = reduced ? {} : item;
-
-    const Action = ({ cfg, variant="primary" }) => {
-        if (!cfg) return null;
-        const className = variant === "primary" ? "c-button" : "c-button c-button--ghost";
-        if (cfg.href) {
-            const isInternal = cfg.href.startsWith("/");
-            return isInternal ? (
-                <a className={className} href={cfg.href}>{cfg.label}</a>
-            ) : (
-                <a className={className} href={cfg.href} target="_blank" rel="noreferrer">{cfg.label}</a>
-            )
-        }
-        return (
-            <button className={className} type="button" onClick={cfg.onClick}>
-                {cfg.label}
-            </button>
-        );
-    };
 
     return (
         <As className={`hero hero--${align} ${contained ? "hero--contained" : ""}`}>

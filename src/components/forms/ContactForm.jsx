@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import "../../styles/components/_contact.scss";
 

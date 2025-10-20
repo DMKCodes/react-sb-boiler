@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "../../styles/components/_video.scss";
 
 /* Props:
@@ -59,6 +59,8 @@ const VideoNative = ({
         });
     };
 
+    const hasCaptions = captions.length > 0;
+
     return (
         <div className={`vid ${className}`} {...rest}>
             <video
@@ -72,16 +74,13 @@ const VideoNative = ({
                 playsInline
                 preload="metadata"
             >
-                {captions.map((c, i) => (
-                    <track
-                        key={i}
-                        kind="captions"
-                        src={c.src}
-                        srcLang={c.srclang || "en"}
-                        label={c.label || "English"}
-                        default={!!c.default}
-                    />
-                ))}
+                <track 
+                    kind="captions" 
+                    src={hasCaptions ? captions.src : null}
+                    srcLang="en" 
+                    label="English" 
+                    default 
+                />
             </video>
 
             {autoPlay && (
@@ -115,7 +114,7 @@ const toYoutubeEmbed = (url) => {
             const id = u.searchParams.get("v");
             return `https://www.youtube.com/embed/${id}?rel=0`;
         }
-    } catch {}
+    } catch { /* ignore */ }
 
     return url;
 };

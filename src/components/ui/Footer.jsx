@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { trackCtaClick } from "../../lib/analytics";
 
@@ -21,7 +22,7 @@ const Footer = () => {
                                 to="/contact" 
                                 onClick={() => trackCtaClick({ label: "Contact", location: "Footer" })}
                             >
-                                FAQ
+                                Contact
                             </Link>
                         </li>
                         <li>

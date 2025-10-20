@@ -34,7 +34,7 @@ export function trackPageview({ path, title }) {
             page_path: path || window.location.pathname,
         });
         }
-    } catch (_) {}
+    } catch (_) { /* ignore */ }
 }
 
 // Generic event helper
@@ -51,7 +51,7 @@ export function trackEvent(name, params = {}) {
         if (hasGA()) {
             window.gtag("event", name, params);
         }
-    } catch (_) {}
+    } catch (_) { /* ignore */ }
 }
 
 // Wrapper for common events

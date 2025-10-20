@@ -1,3 +1,4 @@
+import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeFAQPage } from "../lib/schema";

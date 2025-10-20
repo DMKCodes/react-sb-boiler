@@ -1,3 +1,4 @@
+import React from "react";
 import Testimonial from "./Testimonial.jsx";
 import { testimonials } from "../../data/testimonials.js";
 

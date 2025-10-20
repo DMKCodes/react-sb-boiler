@@ -1,3 +1,4 @@
+import React from "react";
 import { SITE } from "./siteConfig";
 
 export function absoluteUrl(path = "/") {

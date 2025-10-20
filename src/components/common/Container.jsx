@@ -1,3 +1,4 @@
+import React from "react";
 import "../../styles/components/_container.scss";
 
 const Container = ({ size="lg", className="", as: Tag = "div", children, ...rest }) => {

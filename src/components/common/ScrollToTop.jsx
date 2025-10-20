@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+// Returns to top of page as user navigates to/from pages; replace import & line in App.jsx w/ ScrollRestore for more robust implementation
 const ScrollToTop = () => {
     const { pathname } = useLocation();
 
