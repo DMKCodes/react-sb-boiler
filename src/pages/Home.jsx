@@ -1,6 +1,5 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
 import Section from "../components/common/Section";
-import Container from "../components/common/Container";
 import Hero from "../components/ui/Hero";
 
 const Home = () => {
@@ -13,18 +12,16 @@ const Home = () => {
             </Helmet>
 
             <Section padding="xl" alt>
-                <Container size="lg">
-                    <Hero
-                        as="div"
-                        contained={false}
-                        align="left"
-                        title="Spin up small business projects with ease."
-                        sub="A robust, plug-and-play template for building small business applications with React."
-                        primary={{ label: "Learn more", href: "/contact" }}
-                        posterSrc=""
-                        videoSrc=""
-                    />
-                </Container>
+                <Hero
+                    as="div"
+                    contained={false}
+                    align="left"
+                    title="Spin up small business projects with ease."
+                    sub="A robust, plug-and-play template for building small business applications with React."
+                    primary={{ label: "Learn more", href: "/contact" }}
+                    posterSrc=""
+                    videoSrc=""
+                />
             </Section>
         </div>
     );

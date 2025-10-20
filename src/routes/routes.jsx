@@ -9,11 +9,11 @@ const NotFound  = React.lazy(() => import("../pages/NotFound.jsx"));
 
 const routes = [
     { path: "/", Component: Home },
-    { path: "/", Component: About },
-    { path: "/", Component: Media },
-    { path: "/", Component: Events },
-    { path: "/", Component: Contact },
-    { path: "/", Component: NotFound },
+    { path: "/about", Component: About },
+    { path: "/media", Component: Media },
+    { path: "/events", Component: Events },
+    { path: "/contact", Component: Contact },
+    { path: "/404", Component: NotFound },
 ];
 
 export default routes;
