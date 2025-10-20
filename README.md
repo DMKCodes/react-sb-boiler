@@ -1,5 +1,3 @@
-```md
-
 # React Small-Business Boilerplate (React/SCSS/JS)
 by Doug Kissack // Hotkey Creative
 https://hotkeycreative.com
