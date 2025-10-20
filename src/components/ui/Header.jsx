@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import { trackCtaClick } from "../../lib/analytics";
 
 const links = [
     { to: "/about", label: "About" },
@@ -21,6 +22,7 @@ const Header = () => {
                                     to={l.to}
                                     end
                                     className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                                    onClick={() => trackCtaClick({ label: l.label, location: "Header" })}
                                 >
                                     {l.label}
                                 </NavLink>

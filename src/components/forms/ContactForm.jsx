@@ -76,7 +76,7 @@ const ContactForm = ({
             return;
         }
 
-        // Pretend ok if no status (testing/dev mode only)
+        // Pretend ok if no status (testing/dev mode only, remove this before build)
         setStatus("ok");
         reset();
     };
