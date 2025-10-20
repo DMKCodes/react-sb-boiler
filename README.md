@@ -1,6 +1,9 @@
 # React Small-Business Boilerplate (React/SCSS/JS)
+
 by Doug Kissack // Hotkey Creative
+
 https://hotkeycreative.com
+
 doug@hotkeycreative.com
 
 Project Description: A reusable, accessibility-first front-end starter kit for small business websites and similar projects.
